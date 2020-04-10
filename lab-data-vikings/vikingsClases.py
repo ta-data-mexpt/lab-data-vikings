@@ -59,19 +59,19 @@ class War:
     def vikingAttack(self):
         saxon=random.choice(self.saxonArmy)
         viking=random.choice(self.vikingArmy)
-        if saxon.health <= viking.strength:
-            return [saxon.receiveDamage(viking.strength),self.saxonArmy.remove(saxon)][0]
-        else:
-            return saxon.receiveDamage(viking.strength)
+        result = saxon.receiveDamage(viking.strength)
+        if saxon.health <= 0:
+            self.saxonArmy.remove(saxon)
+        return result
 
             
     def saxonAttack(self):
         saxon=random.choice(self.saxonArmy)
         viking=random.choice(self.vikingArmy)
-        if viking.health <= saxon.strength:
-            return [viking.receiveDamage(saxon.strength),self.vikingArmy.remove(viking)][0]
-        else:
-            return viking.receiveDamage(saxon.strength)
+        result = viking.receiveDamage(saxon.strength)
+        if viking.health <= 0:
+            self.vikingArmy.remove(viking)
+        return result
         
     def showStatus(self):
         if len(self.saxonArmy)==0:
