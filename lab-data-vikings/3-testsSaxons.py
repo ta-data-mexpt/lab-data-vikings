@@ -49,8 +49,7 @@ class TestSaxon(unittest.TestCase):
             10), 'A Saxon has received 10 points of damage')
 
     def testReceiveDamageStringDied(self):
-        self.assertEqual(self.saxon.receiveDamage(self.health),
-                         'A Saxon has died in combat')
+        self.assertEqual(self.saxon.receiveDamage(self.health), 'A Saxon has died in combat')
 
 
 if __name__ == '__main__':
