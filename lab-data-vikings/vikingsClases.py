@@ -132,35 +132,33 @@ class War:
         else:
             print('Vikings and Saxons are still in the thick of battle.')
 
-test_war = War()
+#test_war = War()
 
-print(test_war.vikingArmy)
-print(test_war.saxonArmy)
+#print(test_war.vikingArmy)
+#print(test_war.saxonArmy)
 
-test_war.addViking('Ragnar',120,40)
-test_war.addViking('Rollo',80,60)
-test_war.addSaxon(80, 20)
-test_war.addSaxon(80, 20)
+#test_war.addViking('Ragnar',120,40)
+#test_war.addViking('Rollo',80,60)
+#test_war.addSaxon(80, 20)
+#test_war.addSaxon(80, 20)
 
-test_war.vikingAtack()
-test_war.showStatus()
+#test_war.vikingAtack()
+#test_war.showStatus()
 
-test_war.saxonAttack()
-test_war.showStatus()
+#test_war.saxonAttack()
+#test_war.showStatus()
 
-test_war.vikingAtack()
-test_war.showStatus()
+#test_war.vikingAtack()
+#test_war.showStatus()
 
-test_war.saxonAttack()
-test_war.showStatus()
+#test_war.saxonAttack()
+#test_war.showStatus()
 
+#test_war.vikingAtack()
+#test_war.showStatus()
 
-test_war.vikingAtack()
-test_war.showStatus()
+#test_war.saxonAttack()
+#test_war.showStatus()
 
-test_war.saxonAttack()
-test_war.showStatus()
-
-
-test_war.vikingAtack()
-test_war.showStatus()
+#test_war.vikingAtack()
+#test_war.showStatus()
