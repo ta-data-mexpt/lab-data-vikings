@@ -16,7 +16,7 @@ class Soldier():
 class Viking(Soldier):
     def __init__(self, name, health, strength):
         Soldier.__init__(self,health,strength)
-    self.name = name
+        self.name = name
 
     def attack(Soldier):
         return Soldier.strength(self)
@@ -35,7 +35,7 @@ class Viking(Soldier):
 class Saxon(Soldier):
     def __init__ (self, health, strength):
         self.health = health
-    self.strength = strength
+        self.strength = strength
 
     def attack(Soldier):
         return self.strength
@@ -78,8 +78,7 @@ class War():
     def showStatus(self):
         if saxonArmy == []:
             return ('Vikings have won the war of the century!')
-        if 
-            vikingArmy == []:
+        if vikingArmy == []:
             return ('Saxons have won the war of the century!')
         else:
             return ('Vikings and Saxons are still in the thick battle')
