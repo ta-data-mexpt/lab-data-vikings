@@ -1,4 +1,7 @@
 
+from random import randint
+
+
 # Soldier
 
 class Soldier:
@@ -38,6 +41,7 @@ class Viking(Soldier):
         if self.health > 0:
             print(self.name, 'has received', damage, 'points of damage')
         else:
+            print(self.name, 'has received', damage, 'points of damage')
             print(self.name, 'has died in act of combat')
 
     def battleCry(self):
@@ -69,6 +73,7 @@ class Saxon(Soldier):
         if self.health > 0:
             print('A Saxon has received', damage, 'points of damage')
         else:
+            print('A Saxon has received', damage, 'points of damage')
             print('A Saxon has died in combat')
 
 #test_sax1= Saxon(80,20)
@@ -86,5 +91,76 @@ class Saxon(Soldier):
 # War
 
 class War:
-    
-    pass
+
+    def __init__(self, vikingArmy = [], saxonArmy = []):
+        self.vikingArmy = vikingArmy
+        self.saxonArmy = saxonArmy
+
+    def addViking(self, name, health, strength):
+        self.vikingArmy.append(Viking(name, health, strength))
+
+    def addSaxon(self, health, strength):
+        self.saxonArmy.append(Saxon(health, strength))
+
+    def vikingAtack(self):
+        random_saxon = self.saxonArmy[randint(0,len(self.saxonArmy)-1)]
+        random_viking = self.vikingArmy[randint(0,len(self.vikingArmy)-1)]
+        viking_attack = random_saxon.receiveDamage(random_viking.attack())
+
+        if random_saxon.health <= 0:
+            self.saxonArmy.remove(random_saxon)
+
+        return viking_attack
+
+    def saxonAttack(self):
+        random_saxon = self.saxonArmy[randint(0,len(self.saxonArmy)-1)]
+        random_viking = self.vikingArmy[randint(0,len(self.vikingArmy)-1)]
+        saxon_attack = random_viking.receiveDamage(random_saxon.attack())
+
+        if random_viking.health <= 0:
+            self.vikingArmy.remove(random_viking)
+
+        return saxon_attack
+
+    def showStatus(self):
+        if len(self.saxonArmy) <= 0:
+            print('Vikings have won the war of the century!')
+
+        elif len(self.vikingArmy) <= 0:
+            print('Saxons have fought for their lives and survive another day...')
+
+        else:
+            print('Vikings and Saxons are still in the thick of battle.')
+
+test_war = War()
+
+print(test_war.vikingArmy)
+print(test_war.saxonArmy)
+
+test_war.addViking('Ragnar',120,40)
+test_war.addViking('Rollo',80,60)
+test_war.addSaxon(80, 20)
+test_war.addSaxon(80, 20)
+
+test_war.vikingAtack()
+test_war.showStatus()
+
+test_war.saxonAttack()
+test_war.showStatus()
+
+test_war.vikingAtack()
+test_war.showStatus()
+
+test_war.saxonAttack()
+test_war.showStatus()
+
+
+test_war.vikingAtack()
+test_war.showStatus()
+
+test_war.saxonAttack()
+test_war.showStatus()
+
+
+test_war.vikingAtack()
+test_war.showStatus()
