@@ -27,10 +27,10 @@ class Viking:
         
     def receiveDamage(self,damage):
         self.health = self.health-damage
-        return print(name+ " has received " + damage+" points of damage") if self.healt>0 else print(name + " has died in act of combat") 
+        return self.name+" has received "+str(damage)+" points of damage" if self.health>0 else self.name+" has died in act of combat"
     
-    def battleCry()
-        return print("Odin Owns You All!")
+    def battleCry(self):
+        return 'Odin Owns You All!'
 # Saxon
 
 
@@ -44,7 +44,7 @@ class Saxon:
         
     def receiveDamage(self,damage):
         self.health = self.health-damage
-        return print("A Saxon has received" + damage+" points of damage") if self.healt>0 else print("A Saxon has died in combat") 
+        return "A Saxon has received "+str(damage)+" points of damage" if self.health>0 else "A Saxon has died in combat" 
 
 # War
 
