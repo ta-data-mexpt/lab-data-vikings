@@ -12,7 +12,6 @@ class Soldier:
     def receiveDamage(self, damage):
         self.health = self.health - damage
         return None
-# ------------------------- SOLDIER TEST -------------------------------
 
 #test_sold1= Soldier(100,30)
 #test_sold2 = Soldier(100,50)
@@ -40,34 +39,52 @@ class Viking(Soldier):
             print(self.name, 'has received', damage, 'points of damage')
         else:
             print(self.name, 'has died in act of combat')
-        return
 
     def battleCry(self):
         return print('Odin Owns You All!')
 
-# -------------------------- Viking Test ------------------------------------
+#test_vik1= Viking('Ragnar',120,40)
+#test_vik2 = Viking('Rollo',80,60)
 
-test_vik1= Viking('Ragnar',120,40)
-test_vik2 = Viking('Rollo',80,60)
+#print(test_vik2.health)
 
-print(test_vik2.health)
+#test_vik2.receiveDamage(test_vik1.attack())
 
-test_vik2.receiveDamage(test_vik1.attack())
+#print(test_vik1.strength)
+#print(test_vik2.health)
 
-print(test_vik1.strength)
-print(test_vik2.health)
+#test_vik2.receiveDamage(test_vik1.attack())
 
-test_vik2.receiveDamage(test_vik1.attack())
-
-test_vik2.battleCry()
+#test_vik2.battleCry()
 # Saxon
 
 
-class Saxon:
-    pass
+class Saxon(Soldier):
+    def __init__(self, health, strength):
+        self.health = health
+        self.strength = strength
+
+    def receiveDamage(self, damage):
+        self.health = self.health - damage
+        if self.health > 0:
+            print('A Saxon has received', damage, 'points of damage')
+        else:
+            print('A Saxon has died in combat')
+
+#test_sax1= Saxon(80,20)
+#test_sax2 = Saxon(80,20)
+
+#print(test_sax2.health)
+
+#test_sax2.receiveDamage(test_vik2.attack())
+
+#print(test_sax1.strength)
+#print(test_sax2.health)
+
+#test_sax2.receiveDamage(test_sax1.attack())
 
 # War
 
-
 class War:
+    
     pass
