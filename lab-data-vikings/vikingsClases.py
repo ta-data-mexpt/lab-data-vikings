@@ -32,11 +32,14 @@ class Viking(Soldier):
     # should receive 3 arguments (name, health & strength)
     # should receive the name property as its 1st argument
     # should receive the health property as its 2nd argument
-    # should receive the strength property as its 3rd argument    
+    # should receive the strength property as its 3rd argument   
     def __init__(self, name, health, strength):
+        Soldier.__init__(self, health, strength)
         self.name = name
-        self.health = health
-        self.strength = strength
+
+    # viking strength method
+    def vikingStrength(self):
+        return self.strength
 
     #### `attack()` method
     # (This method should be **inherited** from `Soldier`, no need to reimplement it.)
@@ -79,7 +82,11 @@ class Saxon(Soldier):
     # should receive the health property as its 1st argument
     # should receive the strength property as its 2nd argument
     def __init__(self, health, strength):
-        super().__init__(health, strength)
+        Soldier.__init__(self, health, strength)
+
+    # viking strength method
+    def saxonStrength(self):
+        return self.strength
 
     # attack() method
     # (This method should be inherited from Soldier, no need to reimplement it.)
@@ -99,9 +106,9 @@ class Saxon(Soldier):
     def receiveDamage(self, damage):
         self.health = self.health - damage
         if self.health > 0:
-            answer = "A " + self.name + " has received " + str(damage) + " points of damage"
+            answer = "A Saxon has received " + str(damage) + " points of damage"
         else:
-            answer = "A " + self.name + " has died in act of combat"
+            answer = "A Saxon has died in combat"
         return answer
 
 # War
@@ -141,9 +148,9 @@ class War:
     # should remove dead saxons from the army
     # should return result of calling receiveDamage() of a Saxon with the strength of a Viking
     def vikingAttack(self):
-        damage = Saxon.receiveDamage(Viking.strength)
+        saxonDamage = Saxon.receiveDamage(Viking.vikingStrength)
         self.saxonArmy = filter(lambda x: x>0, [Saxon.health for Saxon.health in self.saxonArmy])
-        return damage
+        return saxonDamage
 
     # saxonAttack() method
     # The Saxon version of vikingAttack(). A Viking receives the damage equal to the strength of a Saxon.
@@ -153,9 +160,9 @@ class War:
     # should remove dead vikings from the army
     # should return result of calling receiveDamage() of a Viking with the strength of a Saxon
     def saxonAttack(self):
-        damage = Viking.receiveDamage(Saxon.strength)
+        vikingDamage = Viking.receiveDamage(Saxon.saxonStrength)
         self.vikingArmy = filter(lambda x: x>0, [Viking.health for Viking.health in self.vikingArmy])
-        return damage
+        return vikingDamage
 
     # showStatus() method
     # Returns the current status of the War based on the size of the armies.
