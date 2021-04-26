@@ -148,7 +148,7 @@ class War:
     # should remove dead saxons from the army
     # should return result of calling receiveDamage() of a Saxon with the strength of a Viking
     def vikingAttack(self):
-        saxonDamage = Saxon.receiveDamage(Viking.vikingStrength)
+        saxonDamage = Saxon.receiveDamage(Viking.attack)
         self.saxonArmy = filter(lambda x: x>0, [Saxon.health for Saxon.health in self.saxonArmy])
         return saxonDamage
 
@@ -160,7 +160,7 @@ class War:
     # should remove dead vikings from the army
     # should return result of calling receiveDamage() of a Viking with the strength of a Saxon
     def saxonAttack(self):
-        vikingDamage = Viking.receiveDamage(Saxon.saxonStrength)
+        vikingDamage = Viking.receiveDamage(Saxon.attack)
         self.vikingArmy = filter(lambda x: x>0, [Viking.health for Viking.health in self.vikingArmy])
         return vikingDamage
 
