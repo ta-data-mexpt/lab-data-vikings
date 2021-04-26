@@ -6,14 +6,15 @@ class Soldier:
     def __init__(self, health, strength):
         self.health = health
         self.strength = strength
-        
-    @staticmethod    
+    
+    @staticmethod        
     def attack():
-        return Soldier.strength()
+        return Soldier(strength)
+
     
     @staticmethod
     def receiveDamage(damage):
-        self.health - damage
+        return self.health - damage
         
 
 # Viking
@@ -57,6 +58,7 @@ class Saxon(Soldier):
 
 
 class War:
+    pass
     def __init__(self, vikingArmy=None, saxonArmy=None):
         if vikingArmy and saxonArmy is None:
             self.vikingArmy = []
@@ -73,4 +75,5 @@ class War:
         self.saxonArmy.append(saxon)
             
     def vikingAttack():
-        pass
+        saxon_attacked = random.choice(saxonArmy)
+        
