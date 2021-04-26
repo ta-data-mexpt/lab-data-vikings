@@ -8,11 +8,11 @@ class Soldier:
         self.health= health
         self.strength = strength
         
-    def attack ():
+    def attack (self):
     
         return self.strength
     
-    def receiveDamage(damage):
+    def receiveDamage(self,damage):
     
         self.health = self.health - damage
     pass
@@ -25,8 +25,12 @@ class Viking (Soldier):
     def __init__(self,name,health,strength):
     
         self.name=name
+        self.health=health
+        self.strength=strength
+
+
         
-    def receiveDamage(damage):
+    def receiveDamage(self, damage):
         
         self.health = self.health - damage
         
@@ -35,7 +39,7 @@ class Viking (Soldier):
         else:
             return "{} has died in act of combat".format(self.name) 
     
-    def battleCry():
+    def battleCry(self):
         
         return "Odin Owns You All!"
         
@@ -52,7 +56,7 @@ class Saxon (Soldier):
         self.health = health
         self.strength = strength
         
-    def receiveDamage(damage):
+    def receiveDamage(self,damage):
         
         self.health = self.health - damage
         
