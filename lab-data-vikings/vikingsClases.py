@@ -6,12 +6,12 @@ class Soldier:
     def __init__(self, health, strength):
         
         self.health = health
-        self.strength = strenght
+        self.strength = strength
         
-        def attack():
-            return self.strength
+        def attack(self):
+            return strength
         
-        def receiveDamage(damage):
+        def receiveDamage(self,damage):
             self.health = self.health - damage
     pass
 
