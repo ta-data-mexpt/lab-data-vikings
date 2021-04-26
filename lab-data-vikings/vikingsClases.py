@@ -9,7 +9,7 @@ class Soldier:
     
     @staticmethod        
     def attack():
-        return Soldier(strength)
+        return self.strength
 
     
     @staticmethod
