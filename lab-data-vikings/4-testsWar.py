@@ -124,8 +124,7 @@ class TestWar2(unittest.TestCase):
         ), 'Saxons have fought for their lives and survive another day...')
 
     def testShouldReturnStringStillFighting(self):
-        self.assertEqual(
-            self.war.showStatus(), 'Vikings and Saxons are still in the thick of battle.')
+        self.assertEqual(self.war.showStatus(), 'Vikings and Saxons are still in the thick of battle.')
 
 
 if __name__ == '__main__':
