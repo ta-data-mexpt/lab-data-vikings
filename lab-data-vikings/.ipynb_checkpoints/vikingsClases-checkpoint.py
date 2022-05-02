@@ -23,12 +23,12 @@ class Viking(Soldier):
         return f'{self.name} has died in act of combat'
     
     def battleCry(self):
-        return 'Odin Owns You All!'
+        return f'Odin owns you all!'
 
 # Saxon
 class Saxon(Soldier):
     def __init__(self, health, strength):
-        super().__init__(health, strength)
+        super().__init__(health, strenght)
     
     def receiveDamage(self, damage):
         self.health -= damage
@@ -38,20 +38,4 @@ class Saxon(Soldier):
 
 # War
 class War:
-    def __init__(self):
-        self.VikingArmy = []
-        self.saxonArmy = []
-
-    def addViking(self,Viking):
-        self.vikingArmy.append(Viking)
-
-    def addSaxon(self,Saxon):
-        self.saxonArmy.append(Saxon)
-    
-    def vikingAttack(self):
-        a = random.choice(self.saxonArmy)
-        b = random.choice(self.VikingArmy)
-        if a.receiveDamage(Viking.strength) == 0:
-            self.saxonArmy.remove(a)
-            return a
-
+    pass
